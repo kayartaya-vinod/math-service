@@ -16,6 +16,18 @@ pipeline{
             }
 
         }
+        
+        stage("build") {
+            when {
+                branch "master"
+            }
+            steps {
+                sh "mvn package -DskipTests"
+            }
+
+
+        }
+
 
     }
 
